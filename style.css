@@ -1,0 +1,152 @@
+:root {
+    --mainColor: 
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+}
+a {
+    display: inline-block;
+}
+.box {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: none;
+    text-align: center;
+}
+#intro {
+    /* background-color: #fa0; */
+    display: block;
+    background-image: url("images/face.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.row {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#intro .wand {
+    position: absolute; 
+    bottom: 20%; 
+    width: calc(117px / 2.5);
+    height: calc(103px / 2.5);
+    animation: wand 5s infinite alternate;
+}
+@keyframes wand {
+    0% {bottom: 20%;left:50%;}
+    25% {bottom: 22%;}
+    50% {bottom: 19%;}
+    75% {bottom: 20%;}
+    100% {bottom: 21%;left:45%;}
+}
+#second {
+    background-image: url("images/chf.png"),url("images/home_3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#second .s1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url("images/chf.png"),url("images/front.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#second .btn {
+    position: absolute;
+    bottom: 10%;
+}
+#third {
+    background-image: url("images/chf.png"),url("images/home_slider_bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#third .content , #fiveth .content, #seventh .content,#nineth .content{
+    width: 70%;
+    /* height: 80%; */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+#third .nextBtn {
+    text-align: right;
+    margin-right: 10px;
+}
+#fourth{
+    background-image: url("images/chf.png"),url("images/step2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#fourth .btn {
+    position: absolute;
+    bottom: 10%;
+}
+#fiveth {
+    background-image: url("images/chf.png"),url("images/step2_slider.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#sixth{
+    background-image: url("images/chf.png"),url("images/step3.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#sixth .btn {
+    position: absolute;
+    bottom: 10%;
+}
+#seventh {
+    background-image: url("images/chf.png"),url("images/step3_slider.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#eighth{
+    background-image: url("images/chf.png"),url("images/step4.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+#eighth .btn {
+    position: absolute;
+    bottom: 10%;
+}
+#nineth {
+    background-image: url("images/chf.png"),url("images/step4_slider.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+/* .btn {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: #666;
+    color: #fff;
+} */

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5 test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="intro">
+            <a href="javascript:;" class="btn" data-target="next">next</a>
+        </div>
+        <div class="box" id="second">
+            <a href="javascript:;" class="btn" data-target="next">next</a>
+            <a href="javascript:;" class="btn" data-target="prev">Prev</a>
+        </div>
+        <div class="box" id="third">
+            <a href="javascript:;" class="btn" data-target="prev">Prev</a>
+            <nav>
+                <a href="javascript:;" class="btn" data-target="#about">about</a>
+                <a href="javascript:;" class="btn" data-target="#service">service</a>
+            </nav>
+        </div>
+        <div class="box" id="about">
+            <h1>about</h1>
+            <a href="javascript:;" class="btn" data-target="#third">Prev</a>
+
+        </div>
+        <div class="box" id="service">
+            <h1>service</h1>
+            <a href="javascript:;" class="btn" data-target="#third">Prev</a>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $(".btn").click(function(){
+                let box = $(this).parents(".box");
+                let _target = $(this).data("target");
+                box.fadeOut(300);
+                switch(_target){
+                    case "next":
+                        box.next().fadeIn(1500);
+                        break;
+                    case "prev":
+                        box.prev().fadeIn(1500);
+                        break;
+                    default:
+                        $(_target).fadeIn(1500);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>H5 test</title>
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+    <link rel="stylesheet" href="slick/slick.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="intro">
+            <a href="javascript:;" class="btn wand animated wobble" data-target="next">
+                <img src="images/wand.png" alt="">
+            </a>
+        </div>
+        <div class="box" id="second">
+            <div class="row">
+                <div class="s1 animated fadeOut delay-5s">
+                    <div class="animated fadeIn delay-2s">童話故事都是騙人的</div>
+                    <div class="animated fadeIn delay-3s">公主們真的只缺王子嗎？</div>
+                </div>
+                <a href="javascript:;" class="btn animated fadeIn delay-5s " data-target="next">
+                    <img src="images/next.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="box" id="third">
+            <div class="row">
+                <div class="content">
+                    <div><img src="images/home1_slider_t.png" alt=""></div>
+                    <div class="slider" id="slider">
+                        <div><img src="images/home_slider_1.png" alt=""></div>
+                        <div><img src="images/home_slider_2.png" alt=""></div>
+                        <div><img src="images/home_slider_3.png" alt=""></div>
+                    </div>
+                    <div><img src="images/home1_slider_b.png" alt=""></div>
+                    <div class="nextBtn">
+                        <a href="javascript:;" class="btn" data-target="next">
+                            <img src="images/next2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="fourth">
+            <div class="row">
+                <a href="javascript:;" class="btn animated fadeIn" data-target="next">
+                    <img src="images/next.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="box" id="fiveth">
+            <div class="row">
+                <div class="content">
+                    <div><img src="images/step2_slider_t.png" alt=""></div>
+                    <div class="slider" id="slider">
+                        <div><img src="images/step2_slider_1.png" alt=""></div>
+                        <div><img src="images/step2_slider_2.png" alt=""></div>
+                        <div><img src="images/step2_slider_3.png" alt=""></div>
+                    </div>
+                    <div><img src="images/step2_slider_b.png" alt=""></div>
+                    <div class="nextBtn">
+                        <a href="javascript:;" class="btn" data-target="next">
+                            <img src="images/next2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="sixth">
+            <div class="row">
+                <a href="javascript:;" class="btn animated fadeIn" data-target="next">
+                    <img src="images/next.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="box" id="seventh">
+            <div class="row">
+                <div class="content">
+                    <div><img src="images/step3_slider_t.png" alt=""></div>
+                    <div class="slider" id="slider">
+                        <div><img src="images/step3_slider_1.png" alt=""></div>
+                        <div><img src="images/step3_slider_2.png" alt=""></div>
+                        <div><img src="images/step3_slider_3.png" alt=""></div>
+                    </div>
+                    <div><img src="images/step3_slider_b.png" alt=""></div>
+                    <div class="nextBtn">
+                        <a href="javascript:;" class="btn" data-target="next">
+                            <img src="images/next2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="eighth">
+            <div class="row">
+                <a href="javascript:;" class="btn animated fadeIn" data-target="next">
+                    <img src="images/next.png" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="box" id="nineth">
+            <div class="row">
+                <div class="content">
+                    <div><img src="images/step4_slider_t.png" alt=""></div>
+                    <div class="slider" id="slider">
+                        <div><img src="images/step4_slider_1.png" alt=""></div>
+                        <div><img src="images/step4_slider_2.png" alt=""></div>
+                        <div><img src="images/step4_slider_3.png" alt=""></div>
+                    </div>
+                    <div><img src="images/step4_slider_b.png" alt=""></div>
+                    <div class="nextBtn">
+                        <a href="javascript:;" class="btn" data-target="next">
+                            <img src="images/next2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="slick/slick.js"></script>
+    <script>
+        $(function(){
+            $(".slider").slick({
+                autoplay:true
+            });
+            $(".btn").click(function(){
+                let box = $(this).parents(".box");
+                let _target = $(this).data("target");
+                box.fadeOut(300);
+                switch(_target){
+                    case "next":
+                        box.next().fadeIn(1500);
+                        break;
+                    case "prev":
+                        box.prev().fadeIn(1500);
+                        break;
+                    default:
+                        $(_target).fadeIn(1500);
+                }
+            })
+        })
+    </script>
+</body>
+</html>
