@@ -14,19 +14,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="owl/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owl/assets/owl.theme.default.min.css">
-    <script>
-        // let m = document.getElementById("m");
-            
-        //     function togglePlay(){
-        //         return m.paused ? m.play() : m.pause();
-        //     };
-            // let v = document.getElementById("video");
-            // if(v.play()){
-            //     m.pause();
-            // }else{
-            //     m.play();
-            // }
-    </script>
 </head>
 <body id="main">
     <div id="percentShow"></div>
@@ -195,16 +182,16 @@
         </div>
         <div id="detail" class="box">
             <div class="control">
-                <a href="javascript:;" onclick="togglePlay()"><img src="images/music_on_b.png" id="voice"class="voice"></a>
-                <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" alt=""></a>
+            <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
+            <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
             </div>
             <div class="row">
             </div>
         </div>
         <div id="location" class="box">
              <div class="control">
+                <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
                 <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">    
-                <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" alt=""></a>
             </div>
             <div class="row">
                 <div class="content">
@@ -236,8 +223,8 @@
             </div>
             <div id="histogram" class="box">
                 <div class="control">
-                    <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
                     <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
+                    <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
                 </div>
                 <div class="row">
                     <div class="content">
