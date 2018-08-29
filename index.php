@@ -15,18 +15,11 @@
     <link rel="stylesheet" href="owl/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="owl/assets/owl.theme.default.min.css">
     <script>
-
-            function togglePlay(){
-                return m.paused ? m.play() : m.pause();
-                if (m.paused){
-                    console.log(0);
-                    document.getElementById("voice").src="images/music_on_b.png";
-                }else{
-                    console.log(1);
-                    document.getElementById("voice").src="images/music_off_b.png";
-                }
-
-            };
+        // let m = document.getElementById("m");
+            
+        //     function togglePlay(){
+        //         return m.paused ? m.play() : m.pause();
+        //     };
             // let v = document.getElementById("video");
             // if(v.play()){
             //     m.pause();
@@ -37,7 +30,7 @@
 </head>
 <body id="main">
     <div id="percentShow"></div>
-    <audio id="m" autoplay loop><source src="music/Dog_and_Pony_Show.mp3"></audio>
+    <audio id="m" class="m" autoplay loop><source src="music/Dog_and_Pony_Show.mp3"></audio>
     <script type="text/javascript">
         function audioAutoPlay(id){
             var audio = document.getElementById("m");
@@ -161,20 +154,19 @@
         </div>
         <div class="box" id="video">
             <div class="control">
-                <a href="javascript:;" onclick="togglePlay()"><img src="images/audio.png" alt=""></a>
-                <a href="javascript:;" data-target="prev" class="btn"><img src="images/back.png" alt=""></a>
+                <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
             </div>
             <div class="row">
                 <div class="content">
                     <div class="v1"><img src="images/videoo.png" alt=""></div>
                     <div class="v2">
-                        <video width="100%" height="auto" controls  preload="auto" poster="images/a.jpg">
+                        <video width="100%" height="auto" controls  preload="auto" poster="images/a.jpg" class="v">
                             <source src="video/a.mp4">
                         </video>
                     </div>
                     <div class="v3"><img src="images/videoA.png" alt=""></div>
                     <div class="v4">
-                        <video width="100%" height="auto" controls  preload="auto" poster="images/b.jpg">
+                        <video width="100%" height="auto" controls  preload="auto" poster="images/b.jpg" class="v">
                             <source src="video/b.mp4">
                         </video>
                     </div>
@@ -189,7 +181,7 @@
         </div>
         <div class="box" id="info">
             <div class="control">
-                <a href="javascript:;" onclick="togglePlay()"><img src="images/audio.png" alt="" id="voice"></a>
+                <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">     
             </div>
             <div class="row">
                 <!-- <div class="content"> -->
@@ -203,7 +195,7 @@
         </div>
         <div id="detail" class="box">
             <div class="control">
-                <a href="javascript:;" onclick="togglePlay()"><img src="images/audio.png" alt=""></a>
+                <a href="javascript:;" onclick="togglePlay()"><img src="images/music_on_b.png" id="voice"class="voice"></a>
                 <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" alt=""></a>
             </div>
             <div class="row">
@@ -211,7 +203,7 @@
         </div>
         <div id="location" class="box">
              <div class="control">
-                <a href="javascript:;" onclick="togglePlay()"><img src="images/audio.png" alt=""></a>
+                <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">    
                 <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" alt=""></a>
             </div>
             <div class="row">
@@ -244,8 +236,8 @@
             </div>
             <div id="histogram" class="box">
                 <div class="control">
-                    <a href="javascript:;" onclick="togglePlay()"><img src="images/audio.png" alt=""></a>
-                    <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" alt=""></a>
+                    <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
+                    <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
                 </div>
                 <div class="row">
                     <div class="content">
@@ -273,6 +265,7 @@
                 </div>
             </div>
     </div>
+    <script src="media.js"></script>
     <script src="jquery-3.3.1.min.js"></script>
     <script src="preloadImg.js"></script>
     <script src="slick/slick.js"></script>
@@ -282,7 +275,6 @@
     <script>
 
         $(function(){
-            let m = document.getElementById("m");
             
             $("#intro").click(function(){
                 $(this).fadeOut();

@@ -9,37 +9,48 @@
 </head>
 
 <body>
-    <audio id="m" autoplay loop>
+    <audio id="m" class="m" autoplay loop>
         <source src="music/Dog_and_Pony_Show.mp3"></audio>
-    <video width="100%" height="auto" controls preload="auto" poster="images/a.jpg" id="v">
+    <video width="100%" height="auto" controls preload="auto" poster="images/a.jpg" id="v" class="v">
         <source src="video/a.mp4">
     </video>
-    <img src="images/music_on_b.png" alt="" onclick="togglePlay()" id="voice">
+    <img src="images/music_on_b.png" alt="" onclick="togglePlay()" class="voice">
+    <img src="images/music_on_b.png" alt="" onclick="togglePlay()" class="voice">
+    <img src="images/music_on_b.png" alt="" onclick="togglePlay()" class="voice">
     <script>
-        let m = document.getElementById("m");
-        let v = document.getElementById("v");
+        let mus = document.getElementById("m");
+        let m = document.querySelectorAll(".m");
+        let v = document.querySelectorAll(".v");
         function togglePlay(){
-                return m.paused ? m.play() : m.pause();
-            };
-        m.onplay = function(){
-            console.log("暫停");
-            document.getElementById("voice").src = "images/music_off_b.png";
-        }
-        m.onpause = function(){
-            console.log("播放");
-            document.getElementById("voice").src = "images/music_on_b.png";
-        }
-       v.onplaying= function(){
-           m.pause();
-           console.log("test");
-       }
-       v.onpause = function(){
-           console.log("play");
-           m.play();
-       }
-        m.onplaying = function () {
-            // console.log("play")
-        }
+            return mus.paused ? mus.play() : mus.pause();
+        };
+        m.forEach(function(mu){
+            let vo = document.querySelectorAll(".voice");
+            mu.onplay = function(){
+                console.log("暫停");
+                vo.forEach(function(voi){
+                    voi.src="images/music_off_b.png";
+                })
+                // document.getElementById("voice").src = "images/music_off_b.png";
+            }
+            mu.onpause = function(){
+                console.log("播放");
+                vo.forEach(function(voi){
+                    voi.src="images/music_on_b.png";
+                })
+                // document.getElementById("voice").src = "images/music_on_b.png";
+            }
+        })
+        v.forEach(function(vi){
+            vi.onplaying= function(){
+                mus.pause();
+                console.log("test");
+            }
+            vi.onpause = function(){
+                console.log("play");
+                mus.play();
+            }
+        })
     </script>
 
 </body>
