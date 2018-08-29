@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     font-family: "Microsoft YaHei";
+    color: #6A3906;
 }
 img {
     max-width: 100%;
@@ -93,7 +94,7 @@ h3,p {
     position: relative;
 }
 .control {
-    position: absolute;
+    position: fixed;
     top: 50px;
     left: 50px;
     z-index: 999;
@@ -192,7 +193,24 @@ h3,p {
 }
 #detail {
     background-image:  url("images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
 }
+#detail .inner {
+    width: 75%;
+    height: 80%;
+    text-align: center;
+    /* background-color: #fa0; */
+    overflow: auto;
+    /* background-attachment: fixed; */
+}
+
 #histogram {
     background-image:  url("images/bg.png");
 }

@@ -18,7 +18,7 @@
 <body id="main">
     <div id="percentShow"></div>
     <audio id="m" class="m" autoplay loop><source src="music/Dog_and_Pony_Show.mp3"></audio>
-    <script type="text/javascript">
+    <script>
         function audioAutoPlay(id){
             var audio = document.getElementById("m");
             audio.play();
@@ -180,12 +180,13 @@
                 <!-- </div> -->
             </div>
         </div>
-        <div id="detail" class="box">
+        <div id="detail" style="display:none">
             <div class="control">
-            <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
-            <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
+                <a href="javascript:;" data-target="#info" class="btn"><img src="images/back.png" width="30"></a>
+                <img src="images/music_off_b.png" class="voice" onclick="togglePlay()">
             </div>
-            <div class="row">
+            <div class="inner">
+                <img src="images/detail.png">
             </div>
         </div>
         <div id="location" class="box">
@@ -202,17 +203,17 @@
                     <div class="l2">
                         <form name="tripleplay" action="">
                             <select name='List1' onchange="fillSelect(this.value,this.form['List2'])">
-                                    <option selected>請選擇</option>
+                                    <option selected>省份</option>
                                 </select>
                                 &nbsp;
                                 <select name='List2' onchange="fillSelect(this.value,this.form['List3'])">
-                                        <option selected>請選擇</option>
+                                        <option selected>城市</option>
                                     </select>
                                     &nbsp;
                                     
                                     <select name='List3' onchange="getValue(this.value, this.form['List2'].value, 
                                 this.form['List1'].value)" style="display:none">
-                            <option selected>請選擇</option>
+                            <option selected>请选择</option>
                         </select>
                         </form>
                     </div>
