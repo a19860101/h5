@@ -14,17 +14,17 @@
 <body>
     <div class="container">
         <div class="box" id="intro">
-            <a href="javascript:;" class="btn wand animated wobble" data-target="next">
+            <a href="javascript:;" class="btn wand" data-target="next">
                 <img src="images/wand.png" alt="">
             </a>
         </div>
         <div class="box" id="second">
             <div class="row">
-                <div class="s1 animated fadeOut delay-5s">
-                    <div class="animated fadeIn delay-2s">童話故事都是騙人的</div>
-                    <div class="animated fadeIn delay-3s">公主們真的只缺王子嗎？</div>
+                <div class="s1">
+                    <div class="s2">童話故事都是騙人的</div>
+                    <div class="s3">公主們真的只缺王子嗎？</div>
                 </div>
-                <a href="javascript:;" class="btn animated fadeIn delay-5s " data-target="next">
+                <a href="javascript:;" class="btn s4" data-target="next">
                     <img src="images/next.png" alt="">
                 </a>
             </div>
@@ -122,14 +122,93 @@
                 </div>
             </div>
         </div>
+        <div class="box" id="video"">
+            <div class="row">
+                <div class="content">
+                    <div class="v1"><img src="images/videoo.png" alt=""></div>
+                    <div class="v2">
+                        <video width="100%" height="auto" controls  preload="auto" poster="images/a.jpg">
+                            <source src="video/a.mp4">
+                        </video>
+                    </div>
+                    <div class="v3"><img src="images/videoA.png" alt=""></div>
+                    <div class="v4">
+                        <video width="100%" height="auto" controls  preload="auto" poster="images/b.jpg">
+                            <source src="video/b.mp4">
+                        </video>
+                    </div>
+                    <div class="v5"><img src="images/videoA.png" alt=""></div>
+                    <div class="nextBtn v6">
+                        <a href="javascript:;" class="btn" data-target="next">
+                            <img src="images/next2.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" id="info">
+            <div class="row">
+                <!-- <div class="content"> -->
+                    <a href="https://mall.jd.com/index-1000017365.html"><img src="images/page_btn1.png" alt=""></a>
+                    <a href="javascript:;" class="btn" data-target="#detail"><img src="images/page_btn2.png" alt=""></a>
+                    <a href="javascript:;" class="btn" data-target="#location"><img src="images/page_btn3.png" alt=""></a>
+                    <a href="#"><img src="images/page_btn4.png" alt=""></a>
+                    <a href="#"><img src="images/page_btn5.png" alt=""></a>
+                <!-- </div> -->
+            </div>
+        </div>
+        <div id="detail" class="box">
+            <div class="row">
+            </div>
+        </div>
+        <div id="location" class="box">
+            <div class="row">
+                <div class="content">
+                    <div class="l1">
+                        <h3>查询门店</h3>
+                        <p>请选择您所在的位置</p>
+                    </div>
+                    <div class="l2">
+                        <form name="tripleplay" action="">
+                            <select name='List1' onchange="fillSelect(this.value,this.form['List2'])">
+                                    <option selected>請選擇</option>
+                                </select>
+                                &nbsp;
+                                <select name='List2' onchange="fillSelect(this.value,this.form['List3'])">
+                                        <option selected>請選擇</option>
+                                    </select>
+                                    &nbsp;
+                                    
+                                    <select name='List3' onchange="getValue(this.value, this.form['List2'].value, 
+                                this.form['List1'].value)" style="display:none">
+                            <option selected>請選擇</option>
+                        </select>
+                        </form>
+                    </div>
+                    <div class="l3"id="output">
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <script src="slick/slick.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <script src="location.js"></script>
     <script>
         $(function(){
             $(".slider").slick({
                 autoplay:true
             });
+            $(".s2,.s3").hide();
+            $(".wand").click(function(){
+                // $(".s1").delay(800).fadeIn()
+                $(".s2").delay(1200).fadeIn()
+                $(".s3").delay(2400).fadeIn()
+                $(".s1").delay(3600).fadeOut()
+                $(".s4").delay(3800).fadeIn()
+            })
             $(".btn").click(function(){
                 let box = $(this).parents(".box");
                 let _target = $(this).data("target");

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <audio id="m" autoplay loop>
+        <source src="music/Dog_and_Pony_Show.mp3"></audio>
+    <video width="100%" height="auto" controls preload="auto" poster="images/a.jpg" id="v">
+        <source src="video/a.mp4">
+    </video>
+    <img src="images/music_on_b.png" alt="" onclick="togglePlay()" id="voice">
+    <script>
+        let m = document.getElementById("m");
+        let v = document.getElementById("v");
+        function togglePlay(){
+                return m.paused ? m.play() : m.pause();
+            };
+        m.onplay = function(){
+            console.log("暫停");
+            document.getElementById("voice").src = "images/music_off_b.png";
+        }
+        m.onpause = function(){
+            console.log("播放");
+            document.getElementById("voice").src = "images/music_on_b.png";
+        }
+       v.onplaying= function(){
+           m.pause();
+           console.log("test");
+       }
+       v.onpause = function(){
+           console.log("play");
+           m.play();
+       }
+        m.onplaying = function () {
+            // console.log("play")
+        }
+    </script>
+
+</body>
+
+</html>
